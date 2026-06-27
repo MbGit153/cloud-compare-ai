@@ -323,17 +323,68 @@ You do NOT:
 
     appendTyping();
 
-    try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
-          max_tokens: 1000,
-          system: SYSTEM_PROMPT,
-          messages: conversationHistory,
-        }),
-      });
+try {
+
+    removeTyping();
+
+    let answer = "";
+
+    const question = text.toLowerCase();
+
+    if(question.includes("s3")){
+
+        answer = `
+Amazon S3 is AWS Object Storage.
+
+Purpose:
+• Store files
+• Backup
+• Static website hosting
+
+Equivalent Azure Service:
+Azure Blob Storage
+
+Equivalent GCP Service:
+Cloud Storage
+`;
+
+    }
+    else if(question.includes("blob")){
+
+        answer = `
+Azure Blob Storage is Microsoft's object storage service.
+
+Features:
+• Hot/Cool/Archive Tiers
+• Lifecycle Management
+• Versioning
+• Encryption
+
+Equivalent AWS:
+Amazon S3
+`;
+
+    }
+    else{
+
+        answer = `
+This answer will later come from Azure AI Foundry.
+
+Question:
+${text}
+`;
+    }
+
+    appendMessage("ai",answer);
+
+}
+catch(err){
+
+    removeTyping();
+
+    appendMessage("ai","Something went wrong.");
+
+}
 
       const data = await response.json();
       removeTyping();
