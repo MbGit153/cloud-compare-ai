@@ -1,1 +1,141 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Web Services (AWS) – CloudCompare AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .aws-accent { color: var(--aws); }
+    .aws-bg { background: rgba(255,153,0,0.08); border-color: rgba(255,153,0,0.2); }
+    .pro-con { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .pro-con-col li { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.6rem; padding-left: 1.4rem; position: relative; }
+    .pro-con-col li::before { position: absolute; left: 0; font-weight: 700; }
+    .pros li::before { content: '✓'; color: var(--accent-green); }
+    .cons li::before { content: '✕'; color: #ef4444; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><span class="logo-icon">☁</span>CloudCompare AI</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="aws.html" class="active">AWS</a></li>
+    <li><a href="azure.html">Azure</a></li>
+    <li><a href="gcp.html">GCP</a></li>
+    <li><a href="chat.html" class="nav-cta btn">AI Assistant</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="background:linear-gradient(135deg,#0a0f1e,#1a0d00,#0a0f1e);">
+  <div class="hero-badge" style="color:var(--aws);border-color:rgba(255,153,0,0.3);background:rgba(255,153,0,0.08);">☁ Amazon Web Services</div>
+  <h1>The <span style="color:var(--aws)">Pioneer</span> of Cloud Computing</h1>
+  <p>AWS launched in 2006 and remains the world's most comprehensive and widely adopted cloud platform, with over 200 fully featured services.</p>
+  <div class="hero-actions">
+    <a href="compare.html" class="btn btn-primary">Compare with Others</a>
+    <a href="https://aws.amazon.com" target="_blank" class="btn btn-secondary">Visit AWS →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section-sm" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="grid-4">
+      <div style="text-align:center;"><div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--aws);">~32%</div><div class="text-muted text-sm mt-1">Cloud Market Share</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--aws);">200+</div><div class="text-muted text-sm mt-1">Services Available</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--aws);">34</div><div class="text-muted text-sm mt-1">Geographic Regions</div></div>
+      <div style="text-align:center;"><div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--aws);">99.99%</div><div class="text-muted text-sm mt-1">S3 Durability SLA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Core Services</div>
+    <h2 class="section-title" style="margin-bottom:2rem;">Top AWS Services</h2>
+    <div class="grid-3">
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">EC2</h3><p class="text-muted text-sm">Elastic Compute Cloud — scalable virtual servers. Hundreds of instance types from micro to HPC.</p><div class="tag tag-yellow mt-2">Compute</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">S3</h3><p class="text-muted text-sm">Simple Storage Service — industry-standard object storage with 11 nines of durability.</p><div class="tag tag-blue mt-2">Storage</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">Lambda</h3><p class="text-muted text-sm">Run code without servers. Pay only for execution time, scales to zero automatically.</p><div class="tag tag-green mt-2">Serverless</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">RDS / Aurora</h3><p class="text-muted text-sm">Managed relational databases for MySQL, Postgres, SQL Server, Oracle, and MariaDB.</p><div class="tag tag-blue mt-2">Database</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">EKS</h3><p class="text-muted text-sm">Elastic Kubernetes Service — fully managed Kubernetes control plane with deep AWS integration.</p><div class="tag tag-yellow mt-2">Containers</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">SageMaker</h3><p class="text-muted text-sm">End-to-end ML platform to build, train, and deploy models at scale with managed notebooks.</p><div class="tag tag-green mt-2">AI / ML</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">CloudFront</h3><p class="text-muted text-sm">Global CDN with 400+ edge locations. Integrates natively with S3, EC2, and API Gateway.</p><div class="tag tag-blue mt-2">Networking</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">DynamoDB</h3><p class="text-muted text-sm">Serverless key-value and document database with single-digit millisecond performance at any scale.</p><div class="tag tag-yellow mt-2">NoSQL</div></div>
+      <div class="card aws-bg"><h3 style="font-weight:700;margin-bottom:0.4rem;">Bedrock</h3><p class="text-muted text-sm">Fully managed generative AI — access foundation models from Anthropic, Mistral, Meta, and more.</p><div class="tag tag-green mt-2">Gen AI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROS & CONS -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-label">Evaluation</div>
+    <h2 class="section-title" style="margin-bottom:2rem;">Strengths & Weaknesses</h2>
+    <div class="card" style="padding:2rem;">
+      <div class="pro-con">
+        <div>
+          <h4 style="color:var(--accent-green);font-weight:700;margin-bottom:1rem;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.06em;">✓ Strengths</h4>
+          <ul class="pro-con-col pros">
+            <li>Widest range of services (200+) — any workload covered</li>
+            <li>Largest global infrastructure (34 regions)</li>
+            <li>Biggest community, talent pool, and third-party ecosystem</li>
+            <li>Market leader since 2006 — battle-tested</li>
+            <li>Best-in-class serverless (Lambda, Fargate)</li>
+            <li>Strong compliance portfolio (HIPAA, FedRAMP, SOC 2)</li>
+            <li>Generous free tier for experimenting</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#ef4444;font-weight:700;margin-bottom:1rem;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.06em;">✕ Weaknesses</h4>
+          <ul class="pro-con-col cons">
+            <li>Pricing is complex and can be expensive at scale</li>
+            <li>Steep learning curve for beginners</li>
+            <li>Console UI can feel overwhelming</li>
+            <li>Support costs add up quickly</li>
+            <li>Vendor lock-in risk with proprietary services</li>
+            <li>Data egress charges are high</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST FOR -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Ideal Use Cases</div>
+    <h2 class="section-title" style="margin-bottom:2rem;">When to choose AWS</h2>
+    <div class="grid-3">
+      <div class="card"><div style="font-size:2rem;margin-bottom:0.75rem;">🏢</div><h4 class="fw-600 mb-1">Enterprises</h4><p class="text-muted text-sm">Mature compliance, procurement, and support structures built for large organizations.</p></div>
+      <div class="card"><div style="font-size:2rem;margin-bottom:0.75rem;">🚀</div><h4 class="fw-600 mb-1">Startups at Scale</h4><p class="text-muted text-sm">AWS Activate program + the widest selection of managed services to move fast.</p></div>
+      <div class="card"><div style="font-size:2rem;margin-bottom:0.75rem;">🤖</div><h4 class="fw-600 mb-1">Generative AI</h4><p class="text-muted text-sm">Bedrock gives access to Anthropic Claude, Titan, Llama, and Mistral without managing infra.</p></div>
+      <div class="card"><div style="font-size:2rem;margin-bottom:0.75rem;">🌍</div><h4 class="fw-600 mb-1">Global Reach</h4><p class="text-muted text-sm">Need to deploy in many regions? AWS has the most coverage worldwide.</p></div>
+      <div class="card"><div style="font-size:2rem;margin-bottom:0.75rem;">⚡</div><h4 class="fw-600 mb-1">Serverless Apps</h4><p class="text-muted text-sm">Lambda + API Gateway + DynamoDB is the gold standard event-driven stack.</p></div>
+      <div class="card"><div style="font-size:2rem;margin-bottom:0.75rem;">🔒</div><h4 class="fw-600 mb-1">Government / FedRAMP</h4><p class="text-muted text-sm">AWS GovCloud (US) is purpose-built for US federal workloads and compliance.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© 2026 CloudCompare AI</span>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="azure.html" class="btn btn-secondary" style="font-size:0.8rem;padding:0.35rem 0.9rem;">⚡ Azure</a>
+        <a href="gcp.html" class="btn btn-secondary" style="font-size:0.8rem;padding:0.35rem 0.9rem;">🔷 GCP</a>
+        <a href="compare.html" class="btn btn-primary" style="font-size:0.8rem;padding:0.35rem 0.9rem;">Compare All</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
