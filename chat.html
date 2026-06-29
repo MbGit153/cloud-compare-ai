@@ -308,102 +308,193 @@ You do NOT:
       .replace(/\n/g, '<br>');
   }
 
+//   async function sendMessage() {
+//     const input = document.getElementById('chatInput');
+//     const text = input.value.trim();
+//     if (!text || isLoading) return;
+
+//     input.value = '';
+//     input.style.height = 'auto';
+//     isLoading = true;
+//     document.getElementById('sendBtn').disabled = true;
+
+//     appendMessage('user', text);
+//     conversationHistory.push({ role: 'user', content: text });
+
+//     appendTyping();
+
+// try {
+
+//     removeTyping();
+
+//     let answer = "";
+
+//     const question = text.toLowerCase();
+
+//     if(question.includes("s3")){
+
+//         answer = `
+// Amazon S3 is AWS Object Storage.
+
+// Purpose:
+// • Store files
+// • Backup
+// • Static website hosting
+
+// Equivalent Azure Service:
+// Azure Blob Storage
+
+// Equivalent GCP Service:
+// Cloud Storage
+// `;
+
+//     }
+//     else if(question.includes("blob")){
+
+//         answer = `
+// Azure Blob Storage is Microsoft's object storage service.
+
+// Features:
+// • Hot/Cool/Archive Tiers
+// • Lifecycle Management
+// • Versioning
+// • Encryption
+
+// Equivalent AWS:
+// Amazon S3
+// `;
+
+//     }
+//     else{
+
+//         answer = `
+// This answer will later come from Azure AI Foundry.
+
+// Question:
+// ${text}
+// `;
+//     }
+
+//     appendMessage("ai",answer);
+
+// }
+// catch(err){
+
+//     removeTyping();
+
+//     appendMessage("ai","Something went wrong.");
+
+// }
+
+
   async function sendMessage() {
-    const input = document.getElementById('chatInput');
+
+    const input = document.getElementById("chatInput");
     const text = input.value.trim();
+
     if (!text || isLoading) return;
 
-    input.value = '';
-    input.style.height = 'auto';
-    isLoading = true;
-    document.getElementById('sendBtn').disabled = true;
+    input.value = "";
+    input.style.height = "auto";
 
-    appendMessage('user', text);
-    conversationHistory.push({ role: 'user', content: text });
+    isLoading = true;
+    document.getElementById("sendBtn").disabled = true;
+
+    appendMessage("user", text);
 
     appendTyping();
 
-try {
+    try {
 
-    removeTyping();
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
-    let answer = "";
+        removeTyping();
 
-    const question = text.toLowerCase();
+        let answer = "";
 
-    if(question.includes("s3")){
+        const question = text.toLowerCase();
 
-        answer = `
+        if (question.includes("s3")) {
+
+            answer = `
 Amazon S3 is AWS Object Storage.
 
-Purpose:
+Purpose
 • Store files
 • Backup
 • Static website hosting
 
-Equivalent Azure Service:
+Equivalent Azure Service
 Azure Blob Storage
 
-Equivalent GCP Service:
+Equivalent Google Cloud Service
 Cloud Storage
 `;
 
-    }
-    else if(question.includes("blob")){
+        } else if (question.includes("blob")) {
 
-        answer = `
-Azure Blob Storage is Microsoft's object storage service.
+            answer = `
+Azure Blob Storage
 
-Features:
-• Hot/Cool/Archive Tiers
-• Lifecycle Management
+Features
+
 • Versioning
+• Lifecycle Management
 • Encryption
+• Hot/Cool/Archive Tier
 
-Equivalent AWS:
+Equivalent AWS
+
 Amazon S3
 `;
 
-    }
-    else{
+        } else {
 
-        answer = `
+            answer = `
 This answer will later come from Azure AI Foundry.
 
 Question:
+
 ${text}
 `;
-    }
 
-    appendMessage("ai",answer);
+        }
 
-}
-catch(err){
+        appendMessage("ai", answer);
 
-    removeTyping();
-
-    appendMessage("ai","Something went wrong.");
-
-}
-
-      const data = await response.json();
-      removeTyping();
-
-      if (data.content && data.content[0]) {
-        const reply = data.content[0].text;
-        conversationHistory.push({ role: 'assistant', content: reply });
-        appendMessage('ai', reply);
-      } else {
-        appendMessage('ai', '⚠️ Sorry, I couldn\'t get a response. Please try again.');
-      }
     } catch (err) {
-      removeTyping();
-      appendMessage('ai', '⚠️ Network error. Please check your connection and try again.');
+
+        removeTyping();
+
+        appendMessage("ai", "Something went wrong.");
+
     } finally {
-      isLoading = false;
-      document.getElementById('sendBtn').disabled = false;
+
+        isLoading = false;
+        document.getElementById("sendBtn").disabled = false;
+
     }
-  }
+
+}
+
+  //     const data = await response.json();
+  //     removeTyping();
+
+  //     if (data.content && data.content[0]) {
+  //       const reply = data.content[0].text;
+  //       conversationHistory.push({ role: 'assistant', content: reply });
+  //       appendMessage('ai', reply);
+  //     } else {
+  //       appendMessage('ai', '⚠️ Sorry, I couldn\'t get a response. Please try again.');
+  //     }
+  //   } catch (err) {
+  //     removeTyping();
+  //     appendMessage('ai', '⚠️ Network error. Please check your connection and try again.');
+  //   } finally {
+  //     isLoading = false;
+  //     document.getElementById('sendBtn').disabled = false;
+  //   }
+  // }
 </script>
 </body>
 </html>
